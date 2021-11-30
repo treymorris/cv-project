@@ -1,13 +1,16 @@
-import React, { Component } from "react";
+//import React, { useState } from "react";
 
-export class PersPreview extends Component {
-    render() {
-        return(
+const PersPreview = (props) => {
+
+    return (
             <div className="inputBox">
-                <h1>{this.props.firstName}</h1>
-                <h2>{this.props.title}</h2>
-
+                <h1>{props.firstName} {props.lastName}</h1>
+                <div>{props.title}</div>
+                <div>{props.email}</div>
+                <div>{props.phone}</div>
+                <div>{props.address}</div>
             </div>
         )
-    }
-}
+    };
+
+export default PersPreview;

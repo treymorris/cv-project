@@ -1,13 +1,14 @@
-import React, { Component } from "react";
+//import React, { Component } from "react";
 
-export class EduPreview extends Component {
-    render() {
+const EduPreview  = (props) => {
+    
         return(
             <div className="inputBox">
-                <h1>{this.firstName}</h1>
-                <h2>{this.title}</h2>
+                <h1>{props.firstName}</h1>
+                <h2>{props.title}</h2>
 
             </div>
         )
     }
-}
+
+    export default EduPreview;

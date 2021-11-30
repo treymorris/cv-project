@@ -1,13 +1,17 @@
-import React, { Component } from "react";
+//import React, { Component } from "react";
 
-export class ExpPreview extends Component {
-    render() {
+const ExpPreview = (props) => {
+    
         return(
-            <div className="inputBox">
-                <h1>{this.firstName}</h1>
-                <h2>{this.title}</h2>
-
+            <div>
+                <h2>Work Experience</h2>
+                <h3>Job Title: {props.jobtitle}</h3>
+                <div>Description: {props.description}</div>
+                <div>Company Name: {props.company}</div>
+                <div>Location: {props.jobLocation}</div>
+                <div>Employed From: {props.from} To: {props.to}</div>
             </div>
         )
     }
-}
+
+    export default ExpPreview;
