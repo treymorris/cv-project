@@ -1,12 +1,12 @@
 const PersPreview = (props) => {
 
     return (
-            <div className="inputBox">
+            <div className="gridContainer">
                 <h1>{props.firstName} {props.lastName}</h1>
-                <div>Title: {props.title}</div>
-                <div>E-Mail: {props.email}</div>
-                <div>Phone: {props.phone}</div>
-                <div>Address: {props.address}</div>
+                <div className="persInfoDisplay">{props.title}</div>
+                <div className="persInfoDisplay">{props.email}</div>
+                <div className="persInfoDisplay">{props.phone}</div>
+                <div className="persInfoDisplay">{props.address}</div>
             </div>
         )
     };

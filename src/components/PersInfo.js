@@ -23,8 +23,8 @@ const PersInfo = (props) => {
                         />
 
                         <input type="text" 
-                               name="title"
                                placeholder="Title"
+                               name="title"
                                onChange={props.onchange}
                                value={props.title}
                                required
@@ -35,6 +35,7 @@ const PersInfo = (props) => {
                                placeholder="E-mail"
                                onChange={props.onchange}
                                value={props.email}
+                               required
                         />
                             
                         <input type="tel" 

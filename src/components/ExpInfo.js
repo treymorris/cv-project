@@ -25,7 +25,7 @@ const ExpInfo = (props) => {
                         <input type="text"
                                name="company"
                                placeholder="Company"
-                               onchange={props.onchange}
+                               onChange={props.onchange}
                                value={props.company}
                                required
                         />
@@ -68,5 +68,5 @@ const ExpInfo = (props) => {
             </div>
         )
     };
-    
+
 export default ExpInfo;
