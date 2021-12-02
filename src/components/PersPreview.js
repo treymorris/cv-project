@@ -1,14 +1,12 @@
-//import React, { useState } from "react";
-
 const PersPreview = (props) => {
 
     return (
             <div className="inputBox">
                 <h1>{props.firstName} {props.lastName}</h1>
-                <div>{props.title}</div>
-                <div>{props.email}</div>
-                <div>{props.phone}</div>
-                <div>{props.address}</div>
+                <div>Title: {props.title}</div>
+                <div>E-Mail: {props.email}</div>
+                <div>Phone: {props.phone}</div>
+                <div>Address: {props.address}</div>
             </div>
         )
     };

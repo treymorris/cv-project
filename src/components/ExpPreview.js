@@ -1,5 +1,3 @@
-//import React, { Component } from "react";
-
 const ExpPreview = (props) => {
     
         return(
@@ -14,4 +12,4 @@ const ExpPreview = (props) => {
         )
     }
 
-    export default ExpPreview;
+export default ExpPreview;
