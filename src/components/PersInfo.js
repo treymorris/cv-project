@@ -1,16 +1,16 @@
 import React from "react";
 
-const PersInfo = (props) => {
+const PersInfo = ({ persInfo, onchange }) => {
   return (
     <div className="inputBox">
-      <h2>Personal Info</h2>
+      <h2 className="infoHeader">Personal Info</h2>
       <form className="gridContainer">
         <input
           type="text"
           placeholder="First Name"
           name="firstName"
-          onChange={props.onchange}
-          value={props.firstName}
+          onChange={onchange}
+          value={persInfo.firstName}
           required
         />
 
@@ -18,8 +18,8 @@ const PersInfo = (props) => {
           type="text"
           placeholder="Last Name"
           name="lastName"
-          onChange={props.onchange}
-          value={props.lastName}
+          onChange={onchange}
+          value={persInfo.lastName}
           required
         />
 
@@ -27,8 +27,8 @@ const PersInfo = (props) => {
           type="text"
           placeholder="Title"
           name="title"
-          onChange={props.onchange}
-          value={props.title}
+          onChange={onchange}
+          value={persInfo.title}
           required
         />
 
@@ -36,17 +36,8 @@ const PersInfo = (props) => {
           type="email"
           name="email"
           placeholder="E-mail"
-          onChange={props.onchange}
-          value={props.email}
-          required
-        />
-
-        <input
-          type="tel"
-          name="phone"
-          placeholder="Phone Number"
-          onChange={props.onchange}
-          value={props.phone}
+          onChange={onchange}
+          value={persInfo.email}
           required
         />
 
@@ -55,8 +46,17 @@ const PersInfo = (props) => {
           name="address"
           placeholder="Address"
           className="address"
-          onChange={props.onchange}
-          value={props.address}
+          onChange={onchange}
+          value={persInfo.address}
+        />
+
+        <input
+          type="tel"
+          name="phone"
+          placeholder="Phone Number"
+          onChange={onchange}
+          value={persInfo.phone}
+          required
         />
       </form>
     </div>

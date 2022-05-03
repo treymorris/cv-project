@@ -3,7 +3,7 @@ import React from "react";
 const EduInfo = (props) => {
   return (
     <div className="inputBox">
-      <h2>Education</h2>
+      <h2 className="infoHeader">Education</h2>
       <form className="gridContainer">
         <input
           type="text"
@@ -16,7 +16,7 @@ const EduInfo = (props) => {
 
         <input
           type="text"
-          name="location"
+          name="schoolLocation"
           placeholder="Location"
           onChange={props.onchange}
           value={props.schoolLocation}
@@ -34,7 +34,7 @@ const EduInfo = (props) => {
 
         <input
           type="text"
-          name="degree"
+          name="honors"
           placeholder="Honors/Awards"
           onChange={props.onchange}
           value={props.honors}

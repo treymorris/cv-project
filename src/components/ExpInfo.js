@@ -1,9 +1,10 @@
 import React from "react";
 
 const ExpInfo = (props) => {
+  
   return (
     <div className="inputBox">
-      <h2>Experience</h2>
+      <h2 className="infoHeader">Experience</h2>
       <form className="gridContainer">
         <input
           type="text"
@@ -34,10 +35,10 @@ const ExpInfo = (props) => {
 
         <input
           type="text"
-          name="joblocation"
+          name="location"
           placeholder="Location"
           onChange={props.onchange}
-          value={props.jobLocation}
+          value={props.location}
           required
         />
 
