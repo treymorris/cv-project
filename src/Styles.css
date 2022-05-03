@@ -1,4 +1,4 @@
- /* * {
+/* * {
   border: solid 1px red;
 }  */
 h1 {
@@ -21,7 +21,6 @@ h2 {
 .gridContainer {
   display: grid;
   width: 750px;
-  
 }
 
 input {
@@ -64,4 +63,3 @@ input[type="submit"] {
   /* padding: 5px;
   margin: 5px; */
 }
-
