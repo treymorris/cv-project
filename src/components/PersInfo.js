@@ -58,6 +58,15 @@ const PersInfo = ({ persInfo, onchange }) => {
           value={persInfo.phone}
           required
         />
+
+        <textarea
+          name="about"
+          placeholder="About Me"
+          onChange={onchange}
+          value={persInfo.description}
+          required
+        />
+
       </form>
     </div>
   );

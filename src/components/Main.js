@@ -7,13 +7,14 @@ import EduInfo from "./EduInfo";
 import ExpInfo from "./ExpInfo";
 
 const Main = () => {
-  const [personalInfo, setPersonalInfo] = useState({
+  const [persInfo, setPersInfo] = useState({
     firstName: "",
     lastName: "",
     title: "",
     email: "",
     phone: "",
     address: "",
+    about: ""
   });
 
   const [expInfo, setExpInfo] = useState({
@@ -36,7 +37,7 @@ const Main = () => {
 
   const handlePersChange = (e) => {
     const { name, value } = e.target;
-    setPersonalInfo((prevInfo) => {
+    setPersInfo((prevInfo) => {
       return { ...prevInfo, [name]: value };
     });
   };
@@ -58,12 +59,12 @@ const Main = () => {
   return (
     <div className="main">
       <div className="container">
-        <PersInfo onchange={handlePersChange} persInfo={personalInfo} />
+        <PersInfo onchange={handlePersChange} persInfo={persInfo} />
         <ExpInfo onchange={handleExpChange} expInfo={expInfo} />
         <EduInfo onchange={handleEduChange} eduInfo={eduInfo} />
       </div>
       <div className="container">
-        <PersPreview {...{ ...personalInfo }} />
+        <PersPreview {...{ ...persInfo }} />
         <ExpPreview {...{ ...expInfo }} />
         <EduPreview {...{ ...eduInfo }} />
       </div>

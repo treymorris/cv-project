@@ -1,6 +1,6 @@
 import React from "react";
 
-const EduInfo = (props) => {
+const EduInfo = ({ eduInfo, onchange }) => {
   return (
     <div className="inputBox">
       <h2 className="infoHeader">Education</h2>
@@ -9,8 +9,8 @@ const EduInfo = (props) => {
           type="text"
           name="school"
           placeholder="School Name"
-          onChange={props.onchange}
-          value={props.school}
+          onChange={onchange}
+          value={eduInfo.school}
           required
         />
 
@@ -18,8 +18,8 @@ const EduInfo = (props) => {
           type="text"
           name="schoolLocation"
           placeholder="Location"
-          onChange={props.onchange}
-          value={props.schoolLocation}
+          onChange={onchange}
+          value={eduInfo.schoolLocation}
           required
         />
 
@@ -27,8 +27,8 @@ const EduInfo = (props) => {
           type="text"
           name="degree"
           placeholder="Degree/Certification"
-          onChange={props.onchange}
-          value={props.degree}
+          onChange={onchange}
+          value={eduInfo.degree}
           required
         />
 
@@ -36,16 +36,16 @@ const EduInfo = (props) => {
           type="text"
           name="honors"
           placeholder="Honors/Awards"
-          onChange={props.onchange}
-          value={props.honors}
+          onChange={onchange}
+          value={eduInfo.honors}
         />
 
         <input
           type="text"
           name="educationFrom"
           placeholder="From"
-          onChange={props.onchange}
-          value={props.educationFrom}
+          onChange={onchange}
+          value={eduInfo.educationFrom}
           required
         />
 
@@ -53,14 +53,15 @@ const EduInfo = (props) => {
           type="text"
           name="educationTo"
           placeholder="To"
-          onChange={props.onchange}
-          value={props.educationTo}
+          onChange={onchange}
+          value={eduInfo.educationTo}
           required
         />
 
-        <input type="submit" name="delete" value="Delete" />
-
-        <input type="submit" name="add" value="Add" />
+        <div className="main">
+          <button className="addBtn">Add</button>
+          <button className="delBtn">Delete</button>
+        </div>
       </form>
     </div>
   );

@@ -1,8 +1,10 @@
 :root {
   --font-light: aliceblue;
+  --font-dark: black;
   --border-color: black;
-  --bg-dark: rgb(31, 28, 28);
   --bg-light: lightgray;
+  --bg-dark: rgb(31, 28, 28);
+  --bg-color: rgb(47, 47, 159);
   --bg-danger: red;
   --bg-success: green;
 }
@@ -12,6 +14,15 @@
   padding: 0;
   margin: 0;
 }
+
+body{
+  font-family: -apple-system, BlinkMacSystemFont, 'Roboto', 'Segoe UI', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 .headerTitle {
   background-color: var(--bg-dark);
   padding: 1em;
@@ -22,13 +33,13 @@
 .previewTitle{
   background-color: var(--bg-dark);
   padding: .75em .75em .25em .75em;
-  
   color: var(--font-light);
 }
 
 .previewHeader {
   margin: 0.5em 1em;
   border-bottom: solid 1px var(--border-color);
+  width: 70%;
 }
 
 .infoHeader {
@@ -48,7 +59,7 @@
   width: 750px;
 }
 
-input {
+input, textarea {
   background-color: var(--background-light);
   font-size: 16px;
   border: solid 1px var(--bg-dark);
@@ -71,6 +82,34 @@ input[name="delete"] {
   background-color: var(--bg-danger);
 }
 
+.addBtn{
+  display: inline-block;
+  border-radius: 30px;
+  padding: 0.5rem 0;
+  margin: 0.5rem 1rem;
+  width: 15rem;
+  background: var(--bg-dark);
+  color: var(--font-light);
+}
+
+.delBtn{
+  display: inline-block;
+  border-radius: 30px;
+  padding: 0.5rem 0;
+  margin: 0.5rem 1rem;
+  width: 15rem;
+  background: var(--bg-dark);
+  color: var(--font-light);
+}
+
+.addBtn:hover {
+  background-color: var(--bg-success);
+}
+
+.delBtn:hover{
+  background-color: var(--bg-danger);
+}
+
 .main {
   display: flex;
   justify-content: space-around;
@@ -82,18 +121,29 @@ input[name="delete"] {
   padding: 10px;
   margin-left: 2em;
   display: flex;
+  width: 65%;
+  overflow-wrap: break-word;
 }
 
-.displayText {
+.displayFieldTitle {
   font-weight: bold;
-  margin: auto;
+  margin-right: .5em;
 }
 
 .persInfoDisplay {
-  font-size: 1em;
-  text-align: center;
-  font-weight: bold;
-  margin-top: 0.5em;
+  font-size: .75em;
+  background-color: var(--bg-light);
+  color: var(--font-dark);
+  margin: 0 0 0 1.5em;
+  padding: .25em;
+  
+}
+
+img{
+  border: none;
+  margin: 1.5em 0 0 1.15em;
+  height: 225px;
+  width: 175px;
 }
 
 .persInfoDisplayTitle {
@@ -103,4 +153,28 @@ input[name="delete"] {
   color: var(--font-light);
   padding-left: 1.5em;
   padding-bottom: 1.5em;
+}
+
+.footer{
+  background-color: var(--bg-dark);
+  margin-top: 2em;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--font-light);
+  height: 4em;
+}
+
+.sidebar {
+  height: 100vh;
+  width: 30%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  overflow-wrap:break-word;
+  background-color: var(--bg-light);
+}
+
+.sidebar-container{
+  position: relative;
 }
