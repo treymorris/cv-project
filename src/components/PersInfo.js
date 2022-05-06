@@ -66,7 +66,6 @@ const PersInfo = ({ persInfo, onchange }) => {
           value={persInfo.description}
           required
         />
-
       </form>
     </div>
   );

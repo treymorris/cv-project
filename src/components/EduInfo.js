@@ -10,7 +10,7 @@ const EduInfo = ({ eduInfo, onchange }) => {
           name="school"
           placeholder="School Name"
           onChange={onchange}
-          value={eduInfo.school}
+          value={eduInfo.school || ""}
           required
         />
 
@@ -19,7 +19,7 @@ const EduInfo = ({ eduInfo, onchange }) => {
           name="schoolLocation"
           placeholder="Location"
           onChange={onchange}
-          value={eduInfo.schoolLocation}
+          value={eduInfo.schoolLocation || ""}
           required
         />
 
@@ -28,7 +28,7 @@ const EduInfo = ({ eduInfo, onchange }) => {
           name="degree"
           placeholder="Degree/Certification"
           onChange={onchange}
-          value={eduInfo.degree}
+          value={eduInfo.degree || ""}
           required
         />
 
@@ -37,7 +37,7 @@ const EduInfo = ({ eduInfo, onchange }) => {
           name="honors"
           placeholder="Honors/Awards"
           onChange={onchange}
-          value={eduInfo.honors}
+          value={eduInfo.honors || ""}
         />
 
         <input
@@ -45,7 +45,7 @@ const EduInfo = ({ eduInfo, onchange }) => {
           name="educationFrom"
           placeholder="From"
           onChange={onchange}
-          value={eduInfo.educationFrom}
+          value={eduInfo.educationFrom || ""}
           required
         />
 
@@ -54,7 +54,7 @@ const EduInfo = ({ eduInfo, onchange }) => {
           name="educationTo"
           placeholder="To"
           onChange={onchange}
-          value={eduInfo.educationTo}
+          value={eduInfo.educationTo || ""}
           required
         />
 

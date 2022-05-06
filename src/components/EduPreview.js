@@ -1,20 +1,20 @@
-const EduPreview = (props) => {
+const EduPreview = ({ eduInfo }) => {
   return (
     <div>
       <h3 className="previewHeader">Education</h3>
       <div className="displayField">
-        <p className="displayFieldTitle">{props.educationFrom} -</p>
-        <p className="displayFieldTitle">{props.educationTo}</p>
-        <p className="displayFieldTitle">{props.school}</p>
+        <p className="displayFieldTitle">{eduInfo.educationFrom} -</p>
+        <p className="displayFieldTitle">{eduInfo.educationTo}</p>
+        <p className="displayFieldTitle">{eduInfo.school}</p>
       </div>
       <div className="displayField">
-        <p className="displayText">{props.schoolLocation}</p>
+        <p className="displayText">{eduInfo.schoolLocation}</p>
       </div>
       <div className="displayField">
-        <p className="displayText">{props.degree}</p>
+        <p className="displayText">{eduInfo.degree}</p>
       </div>
       <div className="displayField">
-        <p className="displayText">{props.honors}</p>
+        <p className="displayText">{eduInfo.honors}</p>
       </div>
     </div>
   );
