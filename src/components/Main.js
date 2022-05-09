@@ -41,22 +41,14 @@ const Main = () => {
     ],
   });
 
-  const [persInfo, setPersInfo] = useState({
-    firstName: "",
-    lastName: "",
-    title: "",
-    email: "",
-    phone: "",
-    address: "",
-    about: "",
-  });
-
   const handlePersChange = (e) => {
     const { name, value } = e.target;
-    setPersInfo((prevInfo) => {
-      return { ...prevInfo, [name]: value };
-    });
-  };
+    setCvInfo((prevState) => ({
+      ...prevState, persInfo: {
+        ...prevState.persInfo, [name]: value
+      }
+    }))
+  }
 
   const handleExpChange = (e, id) => {
     const { name, value } = e.target;
@@ -122,7 +114,7 @@ const Main = () => {
   return (
     <div className="main">
       <div className="container">
-        <PersInfo onchange={handlePersChange} persInfo={persInfo} />
+        <PersInfo onchange={handlePersChange} cvInfo={cvInfo} />
         <ExpInfo
           onchange={handleExpChange}
           cvInfo={cvInfo}
@@ -135,7 +127,7 @@ const Main = () => {
         />
       </div>
       <div className="container">
-        <PersPreview persInfo={persInfo} />
+        <PersPreview cvInfo={cvInfo} />
         <ExpPreview cvInfo={cvInfo} />
         <EduPreview cvInfo={cvInfo} />
       </div>

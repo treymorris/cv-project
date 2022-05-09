@@ -1,6 +1,6 @@
 import React from "react";
 
-const PersInfo = ({ persInfo, onchange }) => {
+const PersInfo = ({ cvInfo, onchange }) => {
   return (
     <div className="inputBox">
       <h2 className="infoHeader">Personal Info</h2>
@@ -10,7 +10,7 @@ const PersInfo = ({ persInfo, onchange }) => {
           placeholder="First Name"
           name="firstName"
           onChange={onchange}
-          value={persInfo.firstName}
+          value={cvInfo.persInfo.firstName}
           required
         />
 
@@ -19,7 +19,7 @@ const PersInfo = ({ persInfo, onchange }) => {
           placeholder="Last Name"
           name="lastName"
           onChange={onchange}
-          value={persInfo.lastName}
+          value={cvInfo.persInfo.lastName}
           required
         />
 
@@ -28,7 +28,7 @@ const PersInfo = ({ persInfo, onchange }) => {
           placeholder="Title"
           name="title"
           onChange={onchange}
-          value={persInfo.title}
+          value={cvInfo.persInfo.title}
           required
         />
 
@@ -37,7 +37,7 @@ const PersInfo = ({ persInfo, onchange }) => {
           name="email"
           placeholder="E-mail"
           onChange={onchange}
-          value={persInfo.email}
+          value={cvInfo.persInfo.email}
           required
         />
 
@@ -47,7 +47,7 @@ const PersInfo = ({ persInfo, onchange }) => {
           placeholder="Address"
           className="address"
           onChange={onchange}
-          value={persInfo.address}
+          value={cvInfo.persInfo.address}
         />
 
         <input
@@ -55,7 +55,7 @@ const PersInfo = ({ persInfo, onchange }) => {
           name="phone"
           placeholder="Phone Number"
           onChange={onchange}
-          value={persInfo.phone}
+          value={cvInfo.persInfo.phone}
           required
         />
 
@@ -63,7 +63,7 @@ const PersInfo = ({ persInfo, onchange }) => {
           name="about"
           placeholder="About Me"
           onChange={onchange}
-          value={persInfo.description}
+          value={cvInfo.persInfo.description}
           required
         />
       </form>
