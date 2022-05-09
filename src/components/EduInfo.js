@@ -1,6 +1,6 @@
 import React from "react";
 
-const EduInfo = ({ cvInfo, onchange, onclickAdd }) => {
+const EduInfo = ({ cvInfo, onchange, onclickAdd, onclickDelete }) => {
   return (
     <div className="inputBox">
       <h2 className="infoHeader">Education</h2>
@@ -58,7 +58,7 @@ const EduInfo = ({ cvInfo, onchange, onclickAdd }) => {
               <button className="addBtn" onClick={onclickAdd}>
                 Add
               </button>
-              <button className="delBtn">Delete</button>
+              <button className="delBtn" onClick={() => onclickDelete(info.id)}>Delete</button>
             </div>
           </div>
         </div>

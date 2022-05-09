@@ -1,6 +1,6 @@
 import React from "react";
 
-const ExpInfo = ({ cvInfo, onchange, onclickAdd }) => {
+const ExpInfo = ({ cvInfo, onchange, onclickAdd, onclickDelete }) => {
   return (
     <div className="inputBox">
       <h2 className="infoHeader">Experience</h2>
@@ -51,7 +51,7 @@ const ExpInfo = ({ cvInfo, onchange, onclickAdd }) => {
               <button className="addBtn" onClick={onclickAdd}>
                 Add
               </button>
-              <button className="delBtn">Delete</button>
+              <button className="delBtn" onClick={()=> onclickDelete(info.id)}>Delete</button>
             </div>
           </div>
         </div>

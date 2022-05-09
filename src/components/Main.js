@@ -80,6 +80,16 @@ const Main = () => {
     }));
   };
 
+  const handleExpDelete = (id) => {
+    console.log('delete', id)
+    setCvInfo((prevState) => {
+      const newExperience = prevState.expInfo.filter(
+        (experienceItem) => experienceItem.id !== id
+      );
+      return { ...prevState, expInfo: [...newExperience] };
+    });
+  };
+
   const handleEduChange = (e, id) => {
     const { name, value } = e.target;
     setCvInfo((prevState) => {
@@ -111,6 +121,16 @@ const Main = () => {
     }));
   };
 
+  const handleEduDelete = (id) => {
+    
+    setCvInfo((prevState) => {
+      const newExperience = prevState.eduInfo.filter(
+        (experienceItem) => experienceItem.id !== id
+      );
+      return { ...prevState, eduInfo: [...newExperience] };
+    });
+  };
+
   return (
     <div className="main">
       <div className="container">
@@ -119,11 +139,13 @@ const Main = () => {
           onchange={handleExpChange}
           cvInfo={cvInfo}
           onclickAdd={handleExpAdd}
+          onclickDelete={handleExpDelete}
         />
         <EduInfo
           onchange={handleEduChange}
           cvInfo={cvInfo}
           onclickAdd={handleEduAdd}
+          onclickDelete={handleEduDelete}
         />
       </div>
       <div className="container">
