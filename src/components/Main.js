@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { v4 as uuidv4 } from "uuid";
+import { useReactToPrint } from "react-to-print";
 import PersPreview from "./PersPreview";
 import ExpPreview from "./ExpPreview";
 import EduPreview from "./EduPreview";
@@ -131,6 +132,10 @@ const Main = () => {
     });
   };
 
+  const componentRef = useRef();
+
+  const handlePrint = useReactToPrint({ content: () => componentRef.current})
+
   return (
     <div className="main">
       <div className="container">
@@ -147,8 +152,12 @@ const Main = () => {
           onclickAdd={handleEduAdd}
           onclickDelete={handleEduDelete}
         />
+        <div className="main resetBtnGroup">
+          <button className="warning" >Reset</button>
+          <button className="success" onClick={handlePrint} >Print/Pdf</button>
+        </div>
       </div>
-      <div className="container">
+      <div className="container" ref={componentRef}>
         <PersPreview cvInfo={cvInfo} />
         <ExpPreview cvInfo={cvInfo} />
         <EduPreview cvInfo={cvInfo} />

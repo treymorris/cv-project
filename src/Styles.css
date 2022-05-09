@@ -38,7 +38,7 @@ body {
 
 .previewHeader {
   margin: 0.5em 1em;
-  border-bottom: solid 1px var(--border-color);
+  border-bottom: solid 2px var(--border-color);
   width: 65%;
 }
 
@@ -83,7 +83,7 @@ input[name="delete"] {
   background-color: var(--bg-danger);
 }
 
-.addBtn {
+button {
   display: inline-block;
   border-radius: 30px;
   padding: 0.5rem 0;
@@ -93,22 +93,18 @@ input[name="delete"] {
   color: var(--font-light);
 }
 
-.delBtn {
-  display: inline-block;
-  border-radius: 30px;
-  padding: 0.5rem 0;
-  margin: 0.5rem 1rem;
-  width: 15rem;
-  background: var(--bg-dark);
-  color: var(--font-light);
-}
-
-.addBtn:hover {
+.success:hover {
   background-color: var(--bg-success);
 }
 
-.delBtn:hover {
+.warning:hover {
   background-color: var(--bg-danger);
+}
+
+.resetBtnGroup {
+  border-top: solid 2px black;
+  margin-top: 1em;
+  padding: 1em;
 }
 
 .main {

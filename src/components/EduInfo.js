@@ -55,10 +55,8 @@ const EduInfo = ({ cvInfo, onchange, onclickAdd, onclickDelete }) => {
               required
             />
             <div className="main">
-              <button className="addBtn" onClick={onclickAdd}>
-                Add
-              </button>
-              <button className="delBtn" onClick={() => onclickDelete(info.id)}>Delete</button>
+              <button className="success" onClick={onclickAdd}>Add</button>
+              <button className="warning" onClick={() => onclickDelete(info.id)}>Delete</button>
             </div>
           </div>
         </div>
