@@ -1,68 +1,68 @@
 import React from "react";
 
-const EduInfo = ({ eduInfo, onchange }) => {
+const EduInfo = ({ cvInfo, onchange, onclickAdd }) => {
   return (
     <div className="inputBox">
       <h2 className="infoHeader">Education</h2>
-      <form className="gridContainer">
-        <input
-          type="text"
-          name="school"
-          placeholder="School Name"
-          onChange={onchange}
-          value={eduInfo.school || ""}
-          required
-        />
-
-        <input
-          type="text"
-          name="schoolLocation"
-          placeholder="Location"
-          onChange={onchange}
-          value={eduInfo.schoolLocation || ""}
-          required
-        />
-
-        <input
-          type="text"
-          name="degree"
-          placeholder="Degree/Certification"
-          onChange={onchange}
-          value={eduInfo.degree || ""}
-          required
-        />
-
-        <input
-          type="text"
-          name="honors"
-          placeholder="Honors/Awards"
-          onChange={onchange}
-          value={eduInfo.honors || ""}
-        />
-
-        <input
-          type="text"
-          name="educationFrom"
-          placeholder="From"
-          onChange={onchange}
-          value={eduInfo.educationFrom || ""}
-          required
-        />
-
-        <input
-          type="text"
-          name="educationTo"
-          placeholder="To"
-          onChange={onchange}
-          value={eduInfo.educationTo || ""}
-          required
-        />
-
-        <div className="main">
-          <button className="addBtn">Add</button>
-          <button className="delBtn">Delete</button>
+      {cvInfo.eduInfo.map((info) => (
+        <div key={info.id}>
+          <div className="gridContainer">
+            <input
+              type="text"
+              name="school"
+              placeholder="School Name"
+              onChange={(e) => onchange(e, info.id)}
+              value={info.school || ""}
+              required
+            />
+            <input
+              type="text"
+              name="schoolLocation"
+              placeholder="Location"
+              onChange={(e) => onchange(e, info.id)}
+              value={info.schoolLocation || ""}
+              required
+            />
+            <input
+              type="text"
+              name="degree"
+              placeholder="Degree/Certification"
+              onChange={(e) => onchange(e, info.id)}
+              value={info.degree || ""}
+              required
+            />
+            <input
+              type="text"
+              name="honors"
+              placeholder="Honors/Awards"
+              onChange={(e) => onchange(e, info.id)}
+              value={info.honors || ""}
+            />
+            <input
+              type="text"
+              name="educationFrom"
+              placeholder="From"
+              onChange={(e) => onchange(e, info.id)}
+              value={info.educationFrom || ""}
+              required
+            />
+            <input
+              type="text"
+              name="educationTo"
+              placeholder="To"
+              onChange={(e) => onchange(e, info.id)}
+              value={info.educationTo || ""}
+              required
+            />
+            <div className="main">
+              <button className="addBtn" onClick={onclickAdd}>
+                Add
+              </button>
+              <button className="delBtn">Delete</button>
+            </div>
+          </div>
         </div>
-      </form>
+      ))}
     </div>
   );
 };

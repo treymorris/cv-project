@@ -21,7 +21,6 @@ const Main = () => {
     expInfo: [
       {
         jobtitle: "",
-        description: "",
         company: "",
         location: "",
         from: "",
@@ -51,18 +50,6 @@ const Main = () => {
     address: "",
     about: "",
   });
-
-  const [eduInfo, setEduInfo] = useState([
-    {
-      school: "",
-      schoolLocation: "",
-      degree: "",
-      honors: "",
-      educationFrom: "",
-      educationTo: "",
-      id: uuidv4(),
-    },
-  ]);
 
   const handlePersChange = (e) => {
     const { name, value } = e.target;
@@ -101,11 +88,35 @@ const Main = () => {
     }));
   };
 
-  const handleEduChange = (e) => {
+  const handleEduChange = (e, id) => {
     const { name, value } = e.target;
-    setEduInfo((prevInfo) => {
-      return { ...prevInfo, [name]: value };
+    setCvInfo((prevState) => {
+      const newEducation = prevState.eduInfo.map((educationItem) => {
+        if (educationItem.id === id) {
+          return { ...educationItem, [name]: value };
+        }
+        return educationItem;
+      });
+      return { ...prevState, eduInfo: [...newEducation] };
     });
+  };
+
+  const handleEduAdd = () => {
+    setCvInfo((prevState) => ({
+      ...prevState,
+      eduInfo: [
+        ...prevState.eduInfo,
+        {
+          id: uuidv4(),
+          school: "",
+          schoolLocation: "",
+          degree: "",
+          honors: "",
+          educationFrom: "",
+          educationTo: "",
+        },
+      ],
+    }));
   };
 
   return (
@@ -117,12 +128,16 @@ const Main = () => {
           cvInfo={cvInfo}
           onclickAdd={handleExpAdd}
         />
-        <EduInfo onchange={handleEduChange} eduInfo={eduInfo} />
+        <EduInfo
+          onchange={handleEduChange}
+          cvInfo={cvInfo}
+          onclickAdd={handleEduAdd}
+        />
       </div>
       <div className="container">
         <PersPreview persInfo={persInfo} />
         <ExpPreview cvInfo={cvInfo} />
-        <EduPreview eduInfo={eduInfo} />
+        <EduPreview cvInfo={cvInfo} />
       </div>
     </div>
   );
