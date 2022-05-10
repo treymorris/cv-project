@@ -132,8 +132,44 @@ const Main = () => {
     });
   };
 
-  const componentRef = useRef();
+  const blank = {
+    persInfo: {
+      firstName: "",
+      lastName: "",
+      title: "",
+      email: "",
+      phone: "",
+      address: "",
+      about: "",
+    },
+    expInfo: [
+      {
+        jobtitle: "",
+        company: "",
+        location: "",
+        from: "",
+        to: "",
+        id: uuidv4(),
+      },
+    ],
+    eduInfo: [
+      {
+        school: "",
+        schoolLocation: "",
+        degree: "",
+        honors: "",
+        educationFrom: "",
+        educationTo: "",
+        id: uuidv4(),
+      },
+    ],
+  };
 
+  const handleReset = () => {
+    setCvInfo(blank)
+  }
+
+  const componentRef = useRef();
   const handlePrint = useReactToPrint({ content: () => componentRef.current})
 
   return (
@@ -153,7 +189,7 @@ const Main = () => {
           onclickDelete={handleEduDelete}
         />
         <div className="main resetBtnGroup">
-          <button className="warning" >Reset</button>
+          <button className="warning" onClick={handleReset}>Reset</button>
           <button className="success" onClick={handlePrint} >Print/Pdf</button>
         </div>
       </div>
