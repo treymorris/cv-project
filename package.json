@@ -1,5 +1,6 @@
 {
   "name": "cv-project",
+  "homepage": "https://treymorris.github.io/cv-project",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
